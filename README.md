@@ -1,2 +1,2 @@
-add the node_modules
-fill the .env
+Add the node_modules
+Fill the .env
