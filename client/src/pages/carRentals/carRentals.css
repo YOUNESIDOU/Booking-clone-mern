@@ -1,0 +1,14 @@
+.car-rentals {
+  padding: 20px;
+  text-align: center;
+}
+
+.car-rentals h1 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.car-rentals p {
+  font-size: 1.2em;
+  color: #555;
+}

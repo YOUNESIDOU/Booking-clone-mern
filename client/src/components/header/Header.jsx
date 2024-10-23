@@ -13,9 +13,10 @@ import { useContext, useState } from "react";
 import "react-date-range/dist/styles.css"; // main css file
 import "react-date-range/dist/theme/default.css"; // theme css file
 import { format } from "date-fns";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { SearchContext } from "../../context/SearchContext";
 import { AuthContext } from "../../context/AuthContext";
+import { Link } from "react-router-dom";
 
 const Header = ({ type }) => {
   const [destination, setDestination] = useState("");
@@ -35,6 +36,7 @@ const Header = ({ type }) => {
   });
 
   const navigate = useNavigate();
+  const location = useLocation();
   const { user } = useContext(AuthContext);
 
   const handleOption = (name, operation) => {
@@ -53,6 +55,8 @@ const Header = ({ type }) => {
     navigate("/hotels", { state: { destination, dates, options } });
   };
 
+  const isActive = (path) => location.pathname === path;
+
   return (
     <div className="header">
       <div
@@ -61,26 +65,47 @@ const Header = ({ type }) => {
         }
       >
         <div className="headerList">
-          <div className="headerListItem active">
+          <Link
+            to="/stays"
+            className={`headerListItem ${isActive("/stays") ? "active" : ""}`}
+          >
             <FontAwesomeIcon icon={faBed} />
             <span>Stays</span>
-          </div>
-          <div className="headerListItem">
+          </Link>
+          <Link
+            to="/flights"
+            className={`headerListItem ${isActive("/flights") ? "active" : ""}`}
+          >
             <FontAwesomeIcon icon={faPlane} />
             <span>Flights</span>
-          </div>
-          <div className="headerListItem">
+          </Link>
+          <Link
+            to="/car-rentals"
+            className={`headerListItem ${
+              isActive("/car-rentals") ? "active" : ""
+            }`}
+          >
             <FontAwesomeIcon icon={faCar} />
             <span>Car rentals</span>
-          </div>
-          <div className="headerListItem">
+          </Link>
+          <Link
+            to="/attractions"
+            className={`headerListItem ${
+              isActive("/attractions") ? "active" : ""
+            }`}
+          >
             <FontAwesomeIcon icon={faBed} />
             <span>Attractions</span>
-          </div>
-          <div className="headerListItem">
+          </Link>
+          <Link
+            to="/airport-taxis"
+            className={`headerListItem ${
+              isActive("/airport-taxis") ? "active" : ""
+            }`}
+          >
             <FontAwesomeIcon icon={faTaxi} />
             <span>Airport taxis</span>
-          </div>
+          </Link>
         </div>
         {type !== "list" && (
           <>
@@ -91,7 +116,13 @@ const Header = ({ type }) => {
               Get rewarded for your travels – unlock instant savings of 10% or
               more with a free Lamabooking account
             </p>
-            {!user && <button className="headerBtn">Sign in / Register</button>}
+            {!user ? (
+              <Link to="/register">
+                <button className="headerBtn">Sign in / Register</button>
+              </Link>
+            ) : (
+              <span>{user.username}</span>
+            )}
             <div className="headerSearch">
               <div className="headerSearchItem">
                 <FontAwesomeIcon icon={faBed} className="headerIcon" />
@@ -114,7 +145,9 @@ const Header = ({ type }) => {
                 {openDate && (
                   <DateRange
                     editableDateInputs={true}
-                    onChange={(item) => setDates([item.selection])}
+                    onChange={(item) => {
+                      setDates([item.selection]);
+                      setOpenDate(false);}}
                     moveRangeOnFirstSelection={false}
                     ranges={dates}
                     className="date"

@@ -1,0 +1,14 @@
+.airport-taxis {
+  padding: 20px;
+  text-align: center;
+}
+
+.airport-taxis h1 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.airport-taxis p {
+  font-size: 1.2em;
+  color: #555;
+}

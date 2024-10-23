@@ -1,7 +1,9 @@
-import { useState } from "react";
 import axios from "axios";
+import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "./register.css"; // Add styles here if necessary
+import { AuthContext } from "../../context/AuthContext";
+import "./register.css";
+import { Link } from "react-router-dom";
 
 const Register = () => {
   const [credentials, setCredentials] = useState({
@@ -79,6 +81,9 @@ const Register = () => {
           Register
         </button>
         {error && <span>{error}</span>}
+        <p>
+          I already registered, I want to <Link to="/login">login</Link>.
+        </p>
       </div>
     </div>
   );

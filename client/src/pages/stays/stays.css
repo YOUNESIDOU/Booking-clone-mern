@@ -1,0 +1,14 @@
+.stays {
+  padding: 20px;
+  text-align: center;
+}
+
+.stays h1 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.stays p {
+  font-size: 1.2em;
+  color: #555;
+}
