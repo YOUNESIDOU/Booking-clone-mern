@@ -1,14 +1,56 @@
-.stays {
-  padding: 20px;
-  text-align: center;
+.staysContainer {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
 }
 
-.stays h1 {
-  font-size: 2em;
-  margin-bottom: 20px;
+.staysList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
 }
 
-.stays p {
-  font-size: 1.2em;
-  color: #555;
+.stayItem {
+  width: 300px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.stayImage {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.stayDetails {
+  padding: 10px;
+}
+
+.stayDetails h2 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.stayDetails p {
+  margin: 5px 0;
+  font-size: 14px;
+}
+
+.availabilityButton, .reserveButton {
+  padding: 10px;
+  background-color: #0071c2;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.reserveButton {
+  background-color: #ff5722;
 }

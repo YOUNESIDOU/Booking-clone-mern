@@ -34,10 +34,11 @@ const Header = ({ type }) => {
     children: 0,
     room: 1,
   });
+  const [openDropdown, setOpenDropdown] = useState(false); // État pour le menu déroulant
 
   const navigate = useNavigate();
   const location = useLocation();
-  const { user } = useContext(AuthContext);
+  const { user, dispatch } = useContext(AuthContext); // Ajout du dispatch
 
   const handleOption = (name, operation) => {
     setOptions((prev) => {
@@ -48,14 +49,22 @@ const Header = ({ type }) => {
     });
   };
 
-  const { dispatch } = useContext(SearchContext);
+  const { dispatch: searchDispatch } = useContext(SearchContext);
 
   const handleSearch = () => {
-    dispatch({ type: "NEW_SEARCH", payload: { destination, dates, options } });
+    searchDispatch({
+      type: "NEW_SEARCH",
+      payload: { destination, dates, options },
+    });
     navigate("/hotels", { state: { destination, dates, options } });
   };
 
   const isActive = (path) => location.pathname === path;
+
+  const handleLogout = () => {
+    dispatch({ type: "LOGOUT" });
+    navigate("/"); // Redirection après déconnexion
+  };
 
   return (
     <div className="header">
@@ -121,7 +130,19 @@ const Header = ({ type }) => {
                 <button className="headerBtn">Sign in / Register</button>
               </Link>
             ) : (
-              <span>{user.username}</span>
+              <div
+                className="navItems"
+                onClick={() => setOpenDropdown(!openDropdown)}
+              >
+                <span>{user.username}</span>
+                {openDropdown && (
+                  <div className="dropdownMenu">
+                    <button className="dropdownItem" onClick={handleLogout}>
+                      Logout
+                    </button>
+                  </div>
+                )}
+              </div>
             )}
             <div className="headerSearch">
               <div className="headerSearchItem">
@@ -147,7 +168,8 @@ const Header = ({ type }) => {
                     editableDateInputs={true}
                     onChange={(item) => {
                       setDates([item.selection]);
-                      setOpenDate(false);}}
+                      setOpenDate(false);
+                    }}
                     moveRangeOnFirstSelection={false}
                     ranges={dates}
                     className="date"

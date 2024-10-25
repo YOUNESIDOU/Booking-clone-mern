@@ -9,6 +9,8 @@ import Flights from "./pages/flights/Flights";
 import CarRentals from "./pages/carRentals/CarRentals";
 import Attractions from "./pages/attractions/Attractions";
 import AirportTaxis from "./pages/airportTaxis/AirportTaxis";
+import Reservation from "./pages/reservation/Reservation";
+import Availability from "./pages/availability/Availability";
 
 function App() {
   return (
@@ -24,6 +26,8 @@ function App() {
         <Route path="/car-rentals" element={<CarRentals />} />
         <Route path="/attractions" element={<Attractions />} />
         <Route path="/airport-taxis" element={<AirportTaxis />} />
+        <Route path="/reservation" element={<Reservation />} />
+        <Route path="/availability" element={<Availability />} />
       </Routes>
     </BrowserRouter>
   );

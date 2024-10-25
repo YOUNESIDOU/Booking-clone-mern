@@ -1,14 +1,42 @@
-.attractions {
-  padding: 20px;
-  text-align: center;
+.attractionsContainer {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
 }
 
-.attractions h1 {
-  font-size: 2em;
-  margin-bottom: 20px;
+.attractionsList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
 }
 
-.attractions p {
-  font-size: 1.2em;
-  color: #555;
+.attractionItem {
+  width: 300px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.attractionImage {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.attractionDetails {
+  padding: 10px;
+}
+
+.attractionDetails h2 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.attractionDetails p {
+  margin: 5px 0;
+  font-size: 14px;
 }

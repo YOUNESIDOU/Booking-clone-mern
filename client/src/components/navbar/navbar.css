@@ -25,3 +25,33 @@
   cursor: pointer;
   color: #003580;
 }
+
+/* Styles pour le menu déroulant */
+.navItems {
+  position: relative; /* Position relative pour le positionnement absolu du menu déroulant */
+}
+
+.dropdownMenu {
+  position: absolute; /* Position absolue pour le menu déroulant */
+  top: 100%; /* Positionne juste en dessous de l'élément parent */
+  right: 0; /* Aligne à droite */
+  background-color: white; /* Couleur de fond */
+  border: 1px solid #ccc; /* Bordure */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Ombre */
+  z-index: 1; /* Assure que le menu se superpose aux autres éléments */
+  min-width: 100px; /* Largeur minimale */
+}
+
+.dropdownItem {
+  display: block; /* Affiche comme un bloc */
+  padding: 10px; /* Espacement interne */
+  width: 100%; /* Largeur complète */
+  text-align: left; /* Alignement du texte à gauche */
+  border: none; /* Pas de bordure */
+  background: transparent; /* Transparent pour le fond */
+  cursor: pointer; /* Curseur de pointeur */
+}
+
+.dropdownItem:hover {
+  background-color: #f0f0f0; /* Couleur de fond au survol */
+}

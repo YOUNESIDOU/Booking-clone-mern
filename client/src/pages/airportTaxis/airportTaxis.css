@@ -1,14 +1,42 @@
-.airport-taxis {
-  padding: 20px;
-  text-align: center;
+.airportTaxisContainer {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
 }
 
-.airport-taxis h1 {
-  font-size: 2em;
-  margin-bottom: 20px;
+.taxisList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
 }
 
-.airport-taxis p {
-  font-size: 1.2em;
-  color: #555;
+.taxiItem {
+  width: 300px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.taxiImage {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.taxiDetails {
+  padding: 10px;
+}
+
+.taxiDetails h2 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.taxiDetails p {
+  margin: 5px 0;
+  font-size: 14px;
 }

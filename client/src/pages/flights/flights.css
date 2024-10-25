@@ -1,14 +1,36 @@
-.flights {
-  padding: 20px;
-  text-align: center;
+.flightsContainer {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
 }
 
-.flights h1 {
-  font-size: 2em;
-  margin-bottom: 20px;
+.flightsList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
 }
 
-.flights p {
-  font-size: 1.2em;
-  color: #555;
+.flightItem {
+  width: 300px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.flightDetails {
+  padding: 10px;
+}
+
+.flightDetails h2 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.flightDetails p {
+  margin: 5px 0;
+  font-size: 14px;
 }
