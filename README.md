@@ -29,13 +29,15 @@ This is a booking application that allows users to search for hotels, check avai
 
 1. Install dependencies for the client (frontend):
 
-cd client
-npm install
+   ```bash
+   cd client
+   npm install
 
 2. Install dependencies for the server (backend):
 
-cd ../server
-npm install
+   ```bash
+   cd ../server
+   npm install
 
 3. Set up environment variables:
 
@@ -53,10 +55,12 @@ PAYPAL_CLIENT_ID=your-paypal-client-id-
 #### Running the Application
 
 1. Start the server:
-cd server
-npm start
+   ```bash
+   cd server
+   npm start
 
-2. Start the client:
-cd ../client
-npm start
+3. Start the client:
+   ```bash
+   cd ../client
+   npm start
 Open your browser and navigate to your localhost
