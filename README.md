@@ -66,7 +66,6 @@ DATABASE_URL=mongodb://localhost:27017/booking
 JWT_SECRET=your_jwt_secret
 ```
 
-Replace `your_paypal_client_id` with your PayPal client ID obtained from 
 
 ## Running the Application
 
