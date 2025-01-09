@@ -43,13 +43,13 @@ This is a booking application that allows users to search for hotels, check avai
 
 Create a .env file in the server directory.
 
-Add the necessary environment variables (e.g., database connection string, PayPal client ID).
+Add the necessary environment variables (e.g., database connection string, Port and JWT ).
 
 Example .env file:
 
 PORT=5000
 DATABASE_URL=mongodb://localhost:27017/booking
-PAYPAL_CLIENT_ID=your-paypal-client-id-
+JWT=******************
 
 ### Usage
 #### Running the Application
